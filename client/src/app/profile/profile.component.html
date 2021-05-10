@@ -1,0 +1,14 @@
+<div class="my-5 py-5" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card>
+    <mat-card-title>Mon compte</mat-card-title>
+    <!-- pipe async permet de subscribe et unsubscribe automatiquement ; puis on passe la derniere valeur de currentUser à user -->
+    <mat-card-content
+      *ngIf="currentUser | async; let user"
+      fxLayout="column"
+      fxLayoutGap="15px"
+    >
+      <div>email : {{ user.email }}</div>
+      <div>username : {{ user.username }}</div>
+    </mat-card-content>
+  </mat-card>
+</div>
